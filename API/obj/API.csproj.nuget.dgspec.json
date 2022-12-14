@@ -1,31 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\msı-nb\\skinet\\API\\API.csproj": {}
+    "C:\\Users\\msı-nb\\skinet\\E-Commerce\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\msı-nb\\skinet\\API\\API.csproj": {
+    "C:\\Users\\msı-nb\\skinet\\E-Commerce\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\msı-nb\\skinet\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\msı-nb\\skinet\\API\\API.csproj",
+        "projectPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\API\\API.csproj",
         "packagesPath": "C:\\Users\\msı-nb\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\msı-nb\\skinet\\API\\obj\\",
+        "outputPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\msı-nb\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\msı-nb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -35,10 +41,12 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.1, )"
             },
@@ -65,7 +73,125 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\msı-nb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\msı-nb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\msı-nb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\msı-nb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\msı-nb\\skinet\\E-Commerce\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     }
