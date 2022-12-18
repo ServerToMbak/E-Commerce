@@ -13,7 +13,7 @@ namespace API
 {
     public class Startup
     {
-         private readonly IConfiguration _config;
+        private readonly IConfiguration _config;
         public Startup(IConfiguration config)
         {
             _config = config;
@@ -32,6 +32,11 @@ namespace API
 
             services.AddApplicationServices()   ; 
             services.AddSwaggerDocumentation();
+            services.AddCors(opt => {
+                opt.AddPolicy("corsPolicy", policy =>{
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
 
             
         }
@@ -47,7 +52,7 @@ namespace API
 
             app.UseRouting();
             app.UseStaticFiles();
-
+            app.UseCors("corsPolicy");
             app.UseAuthorization();
 
             app.UseSwaggerDocumentation();
