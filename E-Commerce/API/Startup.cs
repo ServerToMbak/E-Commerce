@@ -50,7 +50,7 @@ namespace API
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseRouting();   
             app.UseStaticFiles();
             app.UseCors("corsPolicy");
             app.UseAuthorization();
