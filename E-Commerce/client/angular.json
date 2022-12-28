@@ -28,8 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.cs",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datapicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
@@ -73,12 +73,11 @@
           "configurations": {
             "production": {
               "browserTarget": "client:build:production"
-
             },
             "development": {
               "browserTarget": "client:build:development",
-              "sslKey" : "ssl/server.key",
-              "sslCert": "ssl/server.crt",
+              "sslKey": "ssl/server.key",
+              "sslCert" :"ssl/server.crt",
               "ssl": true
             }
           },
@@ -88,6 +87,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "client:build"
+
           }
         },
         "test": {
@@ -110,6 +110,5 @@
         }
       }
     }
-  },
-  "defaultProject": "client"
+  }
 }
