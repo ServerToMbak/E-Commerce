@@ -16,6 +16,8 @@ namespace API.Helper
 
 
             CreateMap<Address,AddressDto>().ReverseMap();
+            CreateMap<BasketItemDto,BasketItem>();
+            CreateMap<CustomerBasketDto,CustomerBasket>();
         }
 
         
