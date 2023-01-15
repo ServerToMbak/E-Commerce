@@ -53,5 +53,21 @@ namespace Infrastructure.Data
             return SpecificaionEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);//ApplySpecfication metoduna return edip
             //yukarıda metotlarımızda bu metod üzerinden işlemleri yapabilir hale getirdik.
         }
+
+        public void Add(T entity)
+        {
+            _context.Set<T>().Add(entity);
+        }
+
+        public void Update(T entity)
+        {
+            _context.Set<T>().Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public void Delete(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+        }
     }
 }
