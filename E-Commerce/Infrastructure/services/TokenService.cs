@@ -9,7 +9,7 @@ using Core.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Infrastructure.Data.services
+namespace Infrastructure.services
 {
     public class TokenService : ITokenService
     {

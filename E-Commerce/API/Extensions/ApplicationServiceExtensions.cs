@@ -2,10 +2,10 @@ using System.Linq;
 using API.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
-using Infrastructure.Data.services;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-
+using Infrastructure.services;
 namespace API.Extensions
 {
     public static class ApplicationServiceExtensions
@@ -14,6 +14,7 @@ namespace API.Extensions
         {
             services.AddScoped<ITokenService,TokenService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductRepository,ProductRepository>();
            services.AddScoped<IBasketRepository,BasketRepository>();

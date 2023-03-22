@@ -7,7 +7,7 @@ using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.Specifications;
 
-namespace Infrastructure.Data.services
+namespace Infrastructure.services
 {
     public class OrderService : IOrderService
     {
@@ -18,9 +18,7 @@ namespace Infrastructure.Data.services
         public OrderService(IBasketRepository basketRepo, IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            
-            _basketRepo = basketRepo;
-            
+            _basketRepo = basketRepo;   
         }
 
         public async Task<Order> CreateOrderAsync(string buyerEmail, int deliveryMethodId, string basketId, Address shippingAddress)
@@ -47,11 +45,24 @@ namespace Infrastructure.Data.services
             var subtotal = items.Sum( item => item.Price * item.Quantity);
 
             //Create Order
-            var order =  new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal);
+            var spec = new OrderByPaymentIntentIdSpecification(basket.PaymentIntentId);
+            var order = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
 
-            //save to db
-            _unitOfWork.Repository<Order>().Add(order);
 
+            if(order != null)
+            {
+                order.ShipToAddress = shippingAddress;
+                order.DeliveryMethod = deliveryMethod;
+                order.SubTotal = subtotal;
+                _unitOfWork.Repository<Order>().Update(order);
+            }
+            else
+            {
+                //create order
+                order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal, basket.PaymentIntentId);
+                _unitOfWork.Repository<Order>().Add(order);
+            }
+            //save to DB
             var result = await _unitOfWork.Complete();//unit of workle ya bürün işlemler tamamlanacak yada hiçbiri complete bunu sağlıyor.
 
             if(result <= 0) return null;
